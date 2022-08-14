@@ -3,17 +3,16 @@ package com.example.models;
 public class User {
 
 // Here we are defining our variables
-
+private Integer id;
 private String username = "";
 private String password = "";
 private String firstname = "";
 private String lastname = "";
-private String checkingaccount = "";
-private String savingsaccount = "";  
 
 // Calling the U ser object and giving it input
 
-public User(String username, String password, String firstname, String lastname) {
+public User(Integer id, String username, String password, String firstname, String lastname) {
+    this.id = id;
     this.username = username;
     this.password = password;
     this.firstname = firstname;
@@ -24,6 +23,14 @@ public User(String username, String password, String firstname, String lastname)
 // creating getters and setters -- variables are private so we have to create public getters and setters to access the variables we created. 
 
 
+
+public Integer getId() {
+    return this.id;
+}
+
+public void setId(Integer id) {
+    this.id = id;
+}
     public String getUsername() {
         return this.username;
     }
@@ -48,28 +55,24 @@ public User(String username, String password, String firstname, String lastname)
         this.firstname = firstname;
     }
 
-    public String getLastnmae() {
+    public String getLastname() {
         return this.lastname;
     }
 
-    public void setLastnmae(String lastnmae) {
+    public void setLastname(String lastnmae) {
         this.lastname = lastnmae;
     }
 
-    public String getCheckingaccount() {
-        return this.checkingaccount;
-    }
 
-    public void setCheckingaccount(String checkingaccount) {
-        this.checkingaccount = checkingaccount;
-    }
-
-    public String getSavingsaccount() {
-        return this.savingsaccount;
-    }
-
-    public void setSavingsaccount(String savingsaccount) {
-        this.savingsaccount = savingsaccount;
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", username='" + getUsername() + "'" +
+            ", password='" + getPassword() + "'" +
+            ", firstname='" + getFirstname() + "'" +
+            ", lastname='" + getLastname() + "'" +
+            "}";
     }
 
 }

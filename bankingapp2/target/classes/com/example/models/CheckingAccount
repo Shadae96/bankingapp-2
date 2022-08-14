@@ -1,0 +1,88 @@
+package com.example.models;
+
+
+public class CheckingAccount {
+
+    private Integer id;
+    private Integer balance;
+    private Boolean account_approved;
+    private Integer userIdFk;
+
+    public CheckingAccount (Integer balance, Integer userIdFk){
+    
+        this.balance = balance;
+        this.userIdFk = userIdFk;
+    }
+
+
+    public CheckingAccount(Integer balance, Boolean account_approved, Integer userIdFk){
+        this.balance = balance;
+        this.account_approved = account_approved;
+        this.userIdFk = userIdFk;
+    }
+
+    public CheckingAccount(Integer balance){
+        this.balance = balance;
+    }
+
+
+    public CheckingAccount(Interger id, Integer balance, Boolean account_approved, Integer userIdFk){
+        this.id = id;
+        this.balance = balance;
+        this.account_approved = account_approved;
+        this.userIdFk = userIdFk;
+    }
+
+    public CheckingAccount (){
+
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getBalance() {
+        return this.balance;
+    }
+
+    public void setBalance(Integer balance) {
+        this.balance = balance;
+    }
+
+    public Boolean isAccount_approved() {
+        return this.account_approved;
+    }
+
+    public Boolean getAccount_approved() {
+        return this.account_approved;
+    }
+
+    public void setAccount_approved(Boolean account_approved) {
+        this.account_approved = account_approved;
+    }
+
+    public Integer getUserIdFk() {
+        return this.userIdFk;
+    }
+
+    public void setUserIdFk(Integer userIdFk) {
+        this.userIdFk = userIdFk;
+    }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", balance='" + getBalance() + "'" +
+            ", account_approved='" + isAccount_approved() + "'" +
+            ", userIdFk='" + getUserIdFk() + "'" +
+            "}";
+    }
+    
+
+} 
