@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.consoleviews.MainMenu;
 /**
  * Hello world!
  *

@@ -10,10 +10,10 @@ public interface UserDao {
 
     List <User> getAllUsers();
 
-   User getUserByUsername(String username) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+   static User getUserByUsername(String username) {
+
+    return null;
+} 
 
     void createUser (User user);
     

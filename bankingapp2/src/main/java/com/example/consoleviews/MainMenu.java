@@ -46,7 +46,7 @@ public class MainMenu {
                 String lastNameInputReg = inputUtil.retrieveString("Last Name: ");
 
 
-                User userToCreate = new User(usernameInput,passwordInput,firstNameInputReg,lastNameInputReg);
+                User userToCreate = new User(usernameInputReg,passwordInputReg,firstNameInputReg,lastNameInputReg);
 
                 User userFromDB = this.userService.createUser(userToCreate);
 
@@ -68,6 +68,8 @@ public class MainMenu {
                     System.out.println("invalid input");
                     break;
             }
+
+            scanner.close();
         }
 
 

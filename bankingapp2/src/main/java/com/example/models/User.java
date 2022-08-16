@@ -19,6 +19,18 @@ public User(Integer id, String username, String password, String firstname, Stri
     this.lastname = lastname;
 };
 
+public User(String username, String password, String firstname, String lastname) {
+    this.username = username;
+    this.password = password;
+    this.firstname = firstname;
+    this.lastname = lastname;
+}
+
+public User(String username, String password){
+    this.username = username;
+    this.password = password;
+}
+
 
 // creating getters and setters -- variables are private so we have to create public getters and setters to access the variables we created. 
 

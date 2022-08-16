@@ -2,6 +2,7 @@ package com.example.dao;
 
 
 import com.example.models.User;
+import com.example.util.ConnectionUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDaoJavaImpl implements UserDao {
+public class UserDaoImpl implements UserDao {
     String url = "jdbc:postgresql:// my-database.cr9ubtmwagwv.us-east-2.rds.amazonaws.com/bankingapp";
     String username = "postgres";
     String password = "Shia8645!";
@@ -24,7 +25,7 @@ public List <User> getAllUsers(){
     List <User> users = new ArrayList<>();
 
     try {
-        Connection conn = DriverManager.getConnection(url, username,password);
+        Connection conn = ConnectionUtil.getConnection();
 
         String sql = "select * from users";
 
@@ -46,13 +47,14 @@ public List <User> getAllUsers(){
     return null;
 }
     
-@Override public User getUserByUsername(String username) {
-    
-    User user = null;
+@Override
+    public User getUserByUsername(String username) {
+        
+        User user = null;
     
     //try with resources will close the object thats within the parenthesis
     try {
-        Connection conn = DriverManager.getConnection(url, username,password);
+        Connection conn = ConnectionUtil.getConnection();
 
         //sql that we will be executing
         String sql = "select * from users where username = ?";
